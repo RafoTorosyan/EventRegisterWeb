@@ -77,6 +77,7 @@ public class EventManager {
                 .isOnline(resultSet.getBoolean("is_online"))
                 .eventType(EventType.valueOf(resultSet.getString("event_type")))
                 .price(resultSet.getDouble("price"))
+                .eventDate(resultSet.getString("event_date") == null ? null : sdf.parse(resultSet.getString("event_date")))
                 .build();
     }
 }
